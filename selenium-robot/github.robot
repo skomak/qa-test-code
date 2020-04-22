@@ -2,8 +2,8 @@
 Library	SeleniumLibrary
 
 *** Variables ***
-${URL}	https://github.com
-${BROWSER}		Chrome
+${URL}  https://github.com
+${BROWSER}  Chrome
 
 ${css_totals}  css=#js-pjax-container > div > div.col-12.col-md-9.float-left.px-2.pt-3.pt-md-0.codesearch-results > div > div.d-flex.flex-column.flex-md-row.flex-justify-between.border-bottom.pb-3.position-relative > h3 
 
@@ -11,20 +11,20 @@ ${css_totals}  css=#js-pjax-container > div > div.col-12.col-md-9.float-left.px-
 
 Basic search
     Open main page
-	Search with more than 10 results
-	Assert title
-	Assert search field value
-	Get total number of results
-	Assert total number of results
-	Assert number of results on page
-	If more than 10 results check pagination
+    Search with more than 10 results
+    Assert title
+    Assert search field value
+    Get total number of results
+    Assert total number of results
+    Assert number of results on page
+    If more than 10 results check pagination
 	
-	Search with less than 10 results
-	Get total number of results
-	If more than 10 results check pagination
+    Search with less than 10 results
+    Get total number of results
+    If more than 10 results check pagination
 	
-	Search with 0 results
-	Get total number of results
+    Search with 0 results
+    Get total number of results
     If more than 10 results check pagination
 
 Keyword search
@@ -37,26 +37,26 @@ Keyword search
     Search between 1 and 3 stars
     Validate that between 1 and 3 stars
     
-    [Teardown]    Close Browser
+    [Teardown]  Close Browser
     
 *** Keywords ***
 
 Open main page
-	Open browser    ${URL}   ${BROWSER}
-	set browser implicit wait  10
-	Maximize browser window
+    Open browser  ${URL}  ${BROWSER}
+    set browser implicit wait  10
+    Maximize browser window
 
 Search with more than 10 results
-	Input Text	class=header-search-input	test123
-	Press keys	class=header-search-input	RETURN
+    Input Text	class=header-search-input	test123
+    Press keys	class=header-search-input	RETURN
 
 Assert Title
     ${title} =  get title
     should contain  ${title}  test123
 
 Assert search field value
-	${searchfield} =  get value  class=header-search-input
-	Should Be Equal As Strings  ${searchfield}  test123
+    ${searchfield} =  get value  class=header-search-input
+    Should Be Equal As Strings  ${searchfield}  test123
 
 Get total number of results
     ${IsElementVisible} =  Run Keyword And Return Status  Element Should Be Visible  ${css_totals}
@@ -72,7 +72,7 @@ Return zero
     set suite variable  ${totals}  ${totals}
 
 Assert total number of results
-	should be true  ${totals} > 10
+    should be true  ${totals} > 10
 
 Assert number of results on page
     ${count} =  get element count  class:repo-list-item
