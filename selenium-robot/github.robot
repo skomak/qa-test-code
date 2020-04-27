@@ -39,7 +39,6 @@ Keyword search
     [Teardown]  Close Browser
     
 *** Keywords ***
-
 Open main page
     Open browser  ${URL}  ${BROWSER}
     set browser implicit wait  10
