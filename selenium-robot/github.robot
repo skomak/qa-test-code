@@ -8,7 +8,6 @@ ${BROWSER}  Chrome
 ${css_totals}  css=#js-pjax-container > div > div.col-12.col-md-9.float-left.px-2.pt-3.pt-md-0.codesearch-results > div > div.d-flex.flex-column.flex-md-row.flex-justify-between.border-bottom.pb-3.position-relative > h3 
 
 *** Test Cases ***
-
 Basic search
     Open main page
     Search with more than 10 results
