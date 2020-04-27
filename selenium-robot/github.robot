@@ -49,7 +49,7 @@ Search with more than 10 results
     Input Text	class=header-search-input	test123
     Press keys	class=header-search-input	RETURN
 
-Assert Title
+Assert title
     ${title} =  get title
     should contain  ${title}  test123
 
